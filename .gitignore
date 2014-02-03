@@ -1,0 +1,7 @@
+*~
+bin/kpp
+*.o
+src/lex.yy.c
+src/y.tab.c
+src/y.tab.h
+

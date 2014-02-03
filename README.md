@@ -18,8 +18,8 @@ have Ubuntu 13.10), you need:
         export KPP_HOME=$HOME/kpp-helsinki
         PATH=$PATH:$HOME/kpp-helsinki/bin
 
-* Then (here in the project main) run `make`. Now you should have the KPP
-executable `bin/kpp`.
+* Then (here in the project main directory) run `make`. Now you should have
+the KPP executable `bin/kpp`.
 
 (This README.md is written with [Markdown][4] syntax.)
 

@@ -73,7 +73,7 @@ Here are step-by-step instructions to install KPP on Ubuntu Linux.
         PATH=$PATH:$KPP_HOME/bin
 
     (Assuming you used the name `kpp-helsinki` for the directory in step 2,
-    and assiming you created the `kpp-helsinki` directly under your home
+    and assuming you created the `kpp-helsinki` directly under your home
     directory. Otherwise, modify the first line accordingly.)
 
 5.  Finally, close the shell, and open a new one. Now you can try to run

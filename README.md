@@ -19,7 +19,7 @@ have Ubuntu 13.10), you need:
 * Add something like this to your `.bashrc`
 
         export KPP_HOME=$HOME/kpp-helsinki
-        PATH=$PATH:$HOME/kpp-helsinki/bin
+        PATH=$PATH:$KPP_HOME/bin
 
 * Then (here in the project main directory) run `make`. Now you should have
 the KPP executable `bin/kpp`.
@@ -30,10 +30,64 @@ Main Changes I Made
 * This should compile on a recent Ubuntu without any edits needed
 * Increase MAX_EQN 400 to 10000, MAX_SPECIES 500 to 2000
 * Optimization flags to `Makefile.defs`
-* Remove some unnecessary files (*.out, *.mod etc.) left by the original developers (by
-accident, I assume)
+* Remove some unnecessary files (*.out, *.mod etc.) left by the original
+developers (by accident, I assume)
 
 (This README.md is written with [Markdown][4] syntax.)
+
+Installing, on Ubuntu
+---------------------
+
+Here are step-by-step instructions to install KPP on Ubuntu Linux.
+
+1.  Run these commands to install some prerequisities:
+
+        sudo apt-get install flex
+        sudo apt-get install bison
+        sudo apt-get install git
+
+    You might have some of them already installed, but running the install
+    command again is not harmful, it will just tell you that the package is
+    already installed, and then do nothing.
+
+2.  Next,
+
+        mkdir kpp-helsinki
+        cd kpp-helsinki
+        git clone https://github.com/samposm/kpp-helsinki.git .
+
+    Note the dot at the end of the third line. At the first and second line,
+    you can also create a new directory with some other name, if you like.
+
+3.  Next,
+
+        make
+
+    This will produce a lot of output. If the last line is something like
+    `make[1]: Leaving directory ...` then this is a success. If it contains
+    some kind of error messages, then something is wrong.
+
+4.  Edit the file `.bashrc` in your home directory, and add the lines
+
+        export KPP_HOME=$HOME/kpp-helsinki
+        PATH=$PATH:$KPP_HOME/bin
+
+    (Assuming you used the name `kpp-helsinki` for the directory in step 2,
+    and assiming you created the `kpp-helsinki` directly under your home
+    directory. Otherwise, modify the first line accordingly.)
+
+5.  Finally, close the shell, and open a new one. Now you can try to run
+
+        kpp
+
+    but without any input files, you will just get an error message:
+
+        Fatal error : 
+        Usage :
+                kpp <equations file> [output file]
+        
+        Program aborted
+
 
 Todo
 ----
